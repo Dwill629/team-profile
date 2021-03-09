@@ -78,7 +78,7 @@ function finalTemplate(teamName, addCard) {
             <script src="index.js"></script>
         </body>
         </html>
-      `
+    `
 }
   
   module.exports = finalTemplate;
