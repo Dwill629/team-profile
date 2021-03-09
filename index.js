@@ -90,4 +90,38 @@ const startPrompt = () => {
     });
   }
 
+  const engineerAddition = () => {
+    inquirer.prompt([{
+      type: 'input',
+      message: 'What is the engineer\'s name?',
+      name: 'name',
+      validate: validate.notEmpty
+    },
+    {
+      type: 'input',
+      message: 'What is the engineer\'s employee ID?',
+      name: 'id',
+      validate: validate.numbersOnly
+    },
+    {
+      type: 'input',
+      message: 'What is the engineer\'s email address?',
+      name: 'email',
+      validate: validate.email
+    },
+    {
+      type: 'input',
+      message: 'What is the engineers\'s Github username?',
+      name: 'github',
+      validate: validate.notEmpty
+    },
   
+    ]).then(function ({ name, id, email, github }) {
+      let newEngineer;
+      newEngineer = new Engineer(name, id, email, github);
+      membersArr.push(newEngineer);
+  
+      employeeAddition();
+    });
+  
+  }
