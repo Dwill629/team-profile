@@ -11,3 +11,18 @@ const finalTemplate = require('./html/finalTemplate');
 
 const membersArr = [];
 let teamName = "";
+
+const startPrompt = () => {
+
+    inquirer.prompt([{
+      type: 'input',
+      message: 'Hello. what is your team\'s name?',
+      name: 'teamname',
+      validate: validate.notEmpty
+    }
+    ])
+      .then((data) => {
+        teamName = data.teamname;
+        managerAddition()
+      })
+  }
