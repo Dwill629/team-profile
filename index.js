@@ -25,9 +25,9 @@ const startPrompt = () => {
         teamName = data.teamname;
         managerAddition()
       })
-  }
+}
 
-  const managerAddition = () => {
+const managerAddition = () => {
     inquirer.prompt([{
       type: 'input',
       message: 'What is the manager\'s name?',
@@ -62,9 +62,9 @@ const startPrompt = () => {
   
     });
   
-  }
+}
 
-  const employeeAddition = () => {
+const employeeAddition = () => {
     inquirer.prompt([{
       type: 'list',
       message: 'Select from the options below to add members to your team. Want to add more members?',
@@ -88,9 +88,9 @@ const startPrompt = () => {
         fs.writeFileSync('./html/new.html', finishHTML);
       };
     });
-  }
+}
 
-  const engineerAddition = () => {
+const engineerAddition = () => {
     inquirer.prompt([{
       type: 'input',
       message: 'What is the engineer\'s name?',
@@ -124,9 +124,9 @@ const startPrompt = () => {
       employeeAddition();
     });
   
-  }
+}
 
-  const internAddition = () => {
+const internAddition = () => {
     inquirer.prompt([{
       type: 'input',
       message: 'What is the intern\'s name?',
@@ -160,4 +160,27 @@ const startPrompt = () => {
   
     });
   
-  }
+}
+
+const addEmployeeCard = () => {
+
+    let cards = "";
+    membersArr.forEach(member => {
+  
+      if (member.getRole() === 'Manager') {
+        cards += managerTemplate(member)
+      }
+      if (member.getRole() === 'Engineer') {
+        cards += engineerTemplate(member)
+      }
+      if (member.getRole() === 'Intern') {
+        cards += internTemplate(member)
+      }
+    })
+    return cards;
+}
+  
+function init() {
+    startPrompt();
+}
+init()
