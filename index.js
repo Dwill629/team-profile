@@ -8,3 +8,6 @@ const managerTemplate = require('./html/managerTemplate');
 const engineerTemplate = require('./html/engineerTemplate');
 const internTemplate = require('./html/internTemplate');
 const finalTemplate = require('./html/finalTemplate');
+
+const membersArr = [];
+let teamName = "";
