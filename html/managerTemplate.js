@@ -8,8 +8,8 @@ const managerTemplate = (role) => {
     <p class="card-text">Employee ID: ${role.id}</p>
     <p class="card-text"><a href="mailto:">${role.email}</a></p>
     <p class="card-text">Office Number: ${role.officeNumber}</p>
-</div>
-`
+    </div>
+    `
 }
 
 module.exports = managerTemplate;

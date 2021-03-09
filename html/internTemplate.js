@@ -9,7 +9,7 @@ const internTemplate = (role) => {
       <p class="card-text"><a href="mailto:">${role.email}</a></p>
       <p class="card-text">${role.school}</p>
     </div>
-  `
+    `
   }
   
   module.exports = internTemplate;

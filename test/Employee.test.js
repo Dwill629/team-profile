@@ -38,7 +38,7 @@ describe('Employee Class', () => {
     describe('getEmail()', () => {
         it('should return the email', () => {
             const employee = new Employee('Devon', '5', 'devon@test.com');
-            expect(employee.getEmail()).toBe('jared@test.com');
+            expect(employee.getEmail()).toBe('devon@test.com');
         });
     });
 

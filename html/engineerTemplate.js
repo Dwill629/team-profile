@@ -8,8 +8,8 @@ const engineerTemplate = (role) => {
     <p class="card-text">Employee ID: ${role.id}</p>
     <p class="card-text"><a href="mailto:">${role.email}</a></p>
     <p class="card-text"><a href="github.com/${role.github}">${role.name}\'s Github</a></p>
-</div>
-`
+    </div>
+    `
 }
 
 module.exports = engineerTemplate;
