@@ -63,3 +63,31 @@ const startPrompt = () => {
     });
   
   }
+
+  const employeeAddition = () => {
+    inquirer.prompt([{
+      type: 'list',
+      message: 'Select from the options below to add members to your team. Want to add more members?',
+      name: 'addOrEnd',
+      choices: ['Yes, I would like to add an engineer',
+        'Yes, I would like to add an intern',
+        'Nope, I am finished.']
+    }
+  
+    ]).then(function (choices) {
+      const addOrEnd = choices.addOrEnd;
+      if (addOrEnd.includes('intern')) {
+        internAddition()
+      }
+      if (addOrEnd.includes('engineer')) {
+        engineerAddition()
+      }
+      if (addOrEnd.includes('finished')) {
+  
+        const finishHTML = finalTemplate(teamName, addEmployeeCard());
+        fs.writeFileSync('./html/new.html', finishHTML);
+      };
+    });
+  }
+
+  
