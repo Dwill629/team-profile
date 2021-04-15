@@ -2,6 +2,8 @@
 
 This application is an application that uses inquirer to prompt questions to the user. The questions prompt your teams information. After you are complete, an HTML document is dynamically created using the responses that are provided.
 
+[Walk Through Video](asset/teamProfileRecording.gif)
+
 # User Story
 
 AS A manager
